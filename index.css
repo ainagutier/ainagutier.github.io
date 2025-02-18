@@ -1,0 +1,631 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', sserif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0;
+    padding: 0 20px;
+    color: white; /* Asegura que el texto sea visible sobre la imagen */
+}
+
+h2 {
+    font-size: 2.7em;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-left: 350px;
+   
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+ 
+    
+}
+
+nav a:hover {
+    color: orange;
+}
+
+/* Add some padding and margin around the links for better spacing */
+nav a:first-child {
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    nav a {
+        margin-left: 15px;
+        font-size: 1.1em;
+    }
+}
+
+button {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: pink;
+}
+
+button:hover {
+    background-color: rgb(162, 113, 122);
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.color-acento{color:pink;}
+
+header {
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+    padding: 20px 0;
+}
+
+header .logo {
+    margin: 0;
+    font-weight: bold;
+    color: rgb(236, 185, 193);
+    font-size: 1.6em;
+}
+
+
+
+header a:hover {
+    color: pink;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background: 
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("media/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+#days-section {
+    text-align: center;
+    margin: 50px 20px;
+    padding: 20px;
+    background-color: #ffe6f2; /* Light pink background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.counter-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #a8325f; /* Deep pink for the title */
+}
+
+.counter {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: white;
+    background-color: #ff6392; /* Bright pink for counter background */
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* A stronger shadow for the counter */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+.counter span {
+    font-size: 4em; /* Highlight the number */
+    font-weight: bold;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    .counter-container h2 {
+        font-size: 2em;
+    }
+    .counter {
+        font-size: 2.5em;
+        padding: 15px 30px;
+    }
+    .counter span {
+        font-size: 3em;
+    }
+}
+
+
+/* Section Styling */
+#missatge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffe4e1; 
+}
+
+
+/* Text Container */
+#missatge .container {
+    max-width: 55%; /* Restrict the text width for better readability */
+}
+
+/* Title Styling */
+#missatge h2 {
+
+    font-size: 2rem;
+    color: #a8325f; /* Accent color */
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Accent Text */
+#missatge h2 .color-acento {
+    font-size: 2.2rem; /* Slightly larger for emphasis */
+    color: #a8325f;
+}
+
+/* Paragraph Styling */
+#missatge p {
+  
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #555; /* Softer text color */
+    text-align: left;
+    white-space: pre-wrap; /* Preserve line breaks */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #missatge {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    #missatge .container {
+        max-width: 90%;
+    }
+
+    #missatge h2 {
+        font-size: 1.8rem;
+    }
+
+    #missatge p {
+        font-size: 1.2rem;
+    }
+}
+
+
+#fotus-nostres{
+background-color: rgb(30,30,30);
+color: white;
+text-align: center;
+}
+
+#fotus-nostres .container{
+    padding: 100px 12px; 
+}
+
+#fotus-nostres h2{
+    margin-top: 0;
+    font-size: 3em;
+}
+
+#fotus-nostres h3{
+    font-size: 1.5em;
+}
+
+#fotus-nostres .programas {
+    display: flex;
+    flex-direction: column; /* Cambiado para apilar las cartas verticalmente */
+    align-items: center; /* Centra las cartas dentro del contenedor */
+}
+
+#fotus-nostres .carta {
+    background-position: center center;
+    background-size: cover;
+    padding: 50px;
+    margin: 20px 0; /* Margen superior e inferior para separar las cartas */
+    border-radius: 15px;
+    width: 80%; /* Establecer un ancho para que las cartas no sean demasiado anchas */
+    height: 250px; /* Altura fija para las cartas */
+    text-align: center; /* Centrar el texto dentro de las cartas */
+    color: white; /* Asegurar que el texto sea legible */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para las cartas */
+    transition: transform 0.3s ease; /* Transición suave cuando pasa el ratón */
+}
+
+#fotus-nostres .carta:hover {
+    transform: scale(1.05); /* Efecto de aumento cuando pasa el ratón */
+}
+
+#fotus-nostres .carta h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+#fotus-nostres .carta:first-child {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("media/carta1.jpg");
+}
+
+#fotus-nostres .carta:nth-child(2) {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("media/carta2.jpg");
+}
+
+#fotus-nostres .carta:nth-child(3) {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("media/carta3.jpg");
+}
+
+#receptes {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+}
+
+#receptes h2 {
+    font-size: 2.5em;
+    color: #a8325f;
+}
+
+#receptes form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#receptes label {
+    font-size: 1.2em;
+    margin: 10px 0;
+    display: block;
+}
+
+#receptes input, #receptes textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#receptes .star-rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#receptes .star {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#receptes .star:hover,
+#receptes .star.selected {
+    color:rgb(199, 148, 157);
+}
+
+#receptes button {
+    font-size: 1.2em;
+    background-color: pink;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#receptes button:hover {
+    background-color: #a8325f;
+}
+
+#receptes #recipes-list {
+    margin-top: 40px;
+}
+
+#receptes #recipes-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#receptes #recipes-list li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#receptes #recipes-list li h4 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #a8325f;
+}
+
+#receptes #recipes-list li p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+#receptes #recipes-list li .rating {
+    font-size: 1.5em;
+    color: rgb(184, 139, 147);
+}
+
+
+#pelis-series {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+}
+
+#pelis-series h2 {
+    font-size: 2.5em;
+    color: #a8325f;
+}
+
+#pelis-series form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#pelis-series label {
+    font-size: 1.2em;
+    margin: 10px 0;
+    display: block;
+}
+
+#pelis-series input, #pelis-series textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#pelis-series .star-rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#pelis-series .star {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#pelis-series .star:hover,
+#pelis-series .star.selected {
+    color: rgb(177, 134, 141);
+}
+
+#pelis-series button {
+    font-size: 1.2em;
+    background-color: pink;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pelis-series button:hover {
+    background-color: #a8325f;
+}
+
+#pelis-series #movies-list {
+    margin-top: 40px;
+}
+
+#pelis-series #movies-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#pelis-series #movies-list li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#pelis-series #movies-list li h4 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #a8325f;
+}
+
+#pelis-series #movies-list li p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+#pelis-series #movies-list li .rating {
+    font-size: 1.5em;
+    color: rgb(218, 165, 174);
+}
+
+#mapes {
+    text-align: center; /* Ensure the button is centered */
+    padding: 60px 20px; /* Add padding for spacing */
+    background-color: rgba(255, 192, 203, 0.257);
+}
+
+#mapes .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+#map {
+    width: 100%; /* Full width */
+    height: 85vh; /* Full height, or adjust to your needs */
+    border-radius: 10px; /* Optional: For rounded corners */
+    margin-top: 20px; /* Adjust space above the map */
+}
+
+.button-container {
+    margin-bottom: 20px; /* Space between the button and the map */
+}
+
+.center-btn {
+    background-color: pink;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.center-btn:hover {
+    background-color: rgb(218, 165, 174);
+}
+
+
+
+footer {
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    color: gray;
+}
+
+.delete-button {
+    font-size: 12px;  /* Smaller text */
+    padding: 5px 10px; /* Smaller padding */
+    width: auto;      /* Auto width based on text */
+    height: auto;     /* Auto height based on content */
+}
+
+#mapes h2 {
+    font-size: 2.5em;
+    color: #a8325f;
+}
+
+@media (max-width: 768px) {
+    button {
+        font-size: 0.9em; /* Adjust for smaller screens */
+    }
+}
+
+#missatges h2{
+    font-size: 2.5em;
+    color: #a8325f;
+}
+
+#missatges .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+    gap: 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  #missatges .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(184, 117, 140, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  #missatges .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(253, 72, 181, 0.2);
+  }

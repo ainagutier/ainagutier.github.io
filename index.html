@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolços 22 guapito!</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script>
+        function updateDaysCounter() {
+            const targetDate = new Date('2023-08-29');
+            const currentDate = new Date();
+            const differenceInTime = currentDate - targetDate;
+            const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+            document.getElementById('days-counter').textContent = differenceInDays;
+        }
+
+        document.addEventListener('DOMContentLoaded', updateDaysCounter);
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">T'estimuu</p>
+            <nav>
+                <a href="#receptes">Receptes</a>
+                <a href="#fotus-nostres">Fotos i videos</a>
+                <a href="#pelis-series">Pelis i series</a>
+                <a href="#missatges">Cartes i missatges</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>
+                Dolços 22 guapito, t'estimu moltíssim!! <br>
+                Espero que t'agradi el meu regal :)
+            </h1>
+        </div>
+    </section>
+
+    <section id="days-section">
+        <div class="container">
+            <h2>Dies junts:</h2>
+            <p><span id="days-counter">0</span> dies</p>
+        </div>
+    </section>
+
+    <section id="missatge">
+        <div class="container">
+            <h2>
+                <span class="color-acento">A l'amor de la meva vida</span>
+            </h2>
+            <p>
+                Guapito, he volgut fer-te un detall pel teu aniversari que reflecteixi tot el que t’estimo. A la uni mai havia programat una pàgina web, però he pensat que valia la pena aprendre’n per poder materialitzar, encara que sigui una mica, tot l’amor que sento per tu. Com més et conec, més m’enamoro. No puc imaginar-me què faria ni on seria sense tu. Sóc molt feliç d’haver-te trobat, i no tinc cap dubte que ets el millor noviu del món mundialos.
+            </p>
+        </div>
+    </section>
+
+    <section id="fotus-nostres">
+        <div class="container">
+            <h2>Les nostres fotus</h2>
+            <div class="programas">
+                <div class="carta">
+                    <h3>Excursions i viatges</h3>
+                    <button onclick="redirectToUpload('excursions')">+ Fotus </button>
+                </div>
+                <div class="carta">
+                    <h3>Calella</h3>
+                    <button onclick="redirectToUpload('calella')">+ Fotus </button>
+                </div>
+                <div class="carta">
+                    <h3>Tonteries i altres</h3>
+                    <button onclick="redirectToUpload('tonteries')">+ Fotus </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mapes">
+        <div class="container">
+            <h2>Llocs que hem visitat</h2>
+            <div class="button-container">
+                <button class="center-btn" onclick="resetView()">Centrar Mapa</button>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <section id="receptes">
+        <div class="container">
+            <h2>Les nostres receptes</h2>
+            <form id="recipe-form">
+                <label for="recipe-title">Títol de la recepta:</label>
+                <input type="text" id="recipe-title" name="title" required placeholder="Nom de la recepta">
+
+                <label for="recipe-description">Descripció de la recepta:</label>
+                <textarea id="recipe-description" name="description" required placeholder="Instruccions..."></textarea>
+
+                <label for="recipe-rating">Puntuació:</label>
+                <div class="star-rating" id="recipe-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+
+                <button type="submit">Afegeix Recepta</button>
+            </form>
+
+            <div id="recipes-list">
+                <h3></h3>
+                <ul id="recipe-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="pelis-series">
+        <div class="container">
+            <h2>Les nostres pelis i series </h2>
+            <form id="movie-series-form">
+                <label for="movie-title">Títol de la pel·lícula o sèrie:</label>
+                <input type="text" id="movie-title" name="title" required placeholder="Nom de la pel·lícula o sèrie">
+
+                <label for="movie-description">Descripció:</label>
+                <textarea id="movie-description" name="description" required placeholder="La nostra crítica..."></textarea>
+
+                <label for="movie-rating">Puntuació:</label>
+                <div class="star-rating" id="movie-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+
+                <button type="submit">Afegeix Pel·lícula/Sèrie</button>
+            </form>
+
+            <div id="movies-list">
+                <h3></h3>
+                <ul id="movie-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="missatges">
+        <div class="container">
+            <h2>Cartes i missatges</h2>
+            
+            <div class="gallery">
+                <img src="media/m1.jpg" alt="Excursion Photo 1">
+                <img src="media/m2.jpg" alt="Excursion Photo 2">
+                <img src="media/m3.jpg" alt="Excursion Photo 3">
+                <img src="media/m4.jpg" alt="Excursion Photo 4">
+                <img src="media/m5.jpg" alt="Excursion Photo 5">
+                <img src="media/m6.jpg" alt="Excursion Photo 5">
+                <img src="media/m7.jpg" alt="Excursion Photo 5">
+                <img src="media/m8.jpg" alt="Excursion Photo 5">
+                <img src="media/m9.jpg" alt="Excursion Photo 5">
+                <img src="media/m10.jpg" alt="Excursion Photo 5">
+                <img src="media/m11.jpg" alt="Excursion Photo 5">
+                <img src="media/m13.jpg" alt="Excursion Photo 5">
+                <img src="media/m14.jpg" alt="Excursion Photo 5">
+                <img src="media/m15.jpg" alt="Excursion Photo 5">
+                <img src="media/m16.jpg" alt="Excursion Photo 5">
+                <img src="media/m17.jpg" alt="Excursion Photo 5">
+                <img src="media/m18.jpg" alt="Excursion Photo 5">
+                <img src="media/m19.jpg" alt="Excursion Photo 5">
+                <img src="media/m20.jpg" alt="Excursion Photo 5">
+                <img src="media/m21.jpg" alt="Excursion Photo 5">
+            
+              </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Guapito2024</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const initialView = [41.41438045920799, 2.1394300810589777];
+        const map = L.map('map').setView(initialView, 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+        }).addTo(map);
+
+        const lugares = [
+            { lat: 42.21983642777108, lng: 2.5476012722058075, nombre: "Castellfollit de la Roca" },
+            { lat: 41.9794133187401, lng: 2.8200395730809067, nombre: "Girona" },
+            { lat: 41.89013050825719, lng: 3.186452815996507, nombre: "Calella de Palafrugell"},
+            { lat: 41.97073775058584, lng: 3.148217701944182, nombre: "Pals"},
+            { lat: 41.699877412259326, lng: 1.9767586948248188, nombre: "Mura"},
+            { lat: 41.73704847922596, lng: 1.9775466190321194, nombre: "Talamanca"},
+            { lat: 48.85588899957324, lng: 2.3501216302886863, nombre: "Paris"},
+            { lat: 41.722552383287535, lng: 2.9302068662314635, nombre: "Tossa de Mar"},
+            { lat: 42.14180166578915, lng: 2.541881519499043, nombre: "Volcà de Santa Margarida"},
+            { lat: 41.4781623793974, lng: 2.071015538315208, nombre: "Sant Cugat del Vallés"},
+            { lat: 41.953738724517336, lng: 3.2025359922953243, nombre: "Begur"},
+            { lat: 41.97493692608894, lng: 2.9994861091438385, nombre: "Monells"},
+            { lat: 41.08674346517934, lng: 0.9613673680480531, nombre: "Mont-roig del Camp"},
+            { lat: 42.68739270934393, lng: 2.9055376891313554, nombre: "Perpignan"}, 
+            { lat: 42.720192667183795, lng: 1.8421519447763153, nombre: "Ax les Thermes"},
+            { lat: 42.55533639538084, lng: 1.5318427286694853, nombre: "Andorra"},
+            { lat: 42.024646511266106, lng:  2.4660214266039815, nombre: "Rupit"},
+            { lat: 41.86933616859129, lng:  2.417660268512334, nombre: "Espinelves"},
+            { lat: 41.97552383901495, lng:  3.0903410404197773, nombre: "Peratallada"},
+            { lat: 41.744818685908186, lng:  1.8998904522394806, nombre: "Sant Benet"},
+            { lat: 41.730599744808025, lng:  2.147873070635003, nombre: "Sant Quirze de Safaja"}
+
+        ];
+
+        const markerOptions = {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 10
+        };
+
+        lugares.forEach((lugar) => {
+            L.circleMarker([lugar.lat, lugar.lng], markerOptions)
+                .addTo(map)
+                .bindPopup(`<b>${lugar.nombre}</b>`);
+        });
+
+        function resetView() {
+            map.setView(initialView, 5);
+        }
+    </script>
+    <script src="recipes.js"></script>
+    <script src="movies.js"></script>
+    <script src="upload.js"></script>
+</body>
+
+</html>
